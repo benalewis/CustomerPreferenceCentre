@@ -29,12 +29,13 @@ would like to receive marketing, we assume that if they're not in this list then
 we don't want marketing.
 
 The report generator is pretty simple, we give it some inputs and let it iterate over
-the day range and use the ```Print``` methods provided to generate a neat format.
+the day range and use the overridden ```SendMarketing``` method to evaluate if we should add it to our marking list. 
+We add the correct format using ```Print``` methods.
 
 We then have an end-to-end test taking all of the above and creating architypes for
-each customer, we could have tests for each one but it doesn't really matter; maybe
+each customer, we could have tests for each one but it doesn't really matter for a PoC;
 in a more production ready system we could create more tests but I feel it is somewhat
 overkill as the implementations are all tested here.
 
 ## Conclusion
-A pretty fun task really, got to use polymorphism which is rare.
+A pretty fun task really, got to use polymorphism.
