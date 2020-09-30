@@ -1,0 +1,95 @@
+﻿*** PRINTING MARKETING REPORT ***
+
+01/01/2020 Adam
+02/01/2020 Adam
+03/01/2020 Adam, Eric
+04/01/2020 Adam
+05/01/2020 Adam
+06/01/2020 Adam, Eric
+07/01/2020 Adam
+08/01/2020 Adam
+09/01/2020 Adam
+10/01/2020 Adam, Eric
+11/01/2020 Adam
+12/01/2020 Adam
+13/01/2020 Adam, Eric
+14/01/2020 Adam
+15/01/2020 Adam, Chris
+16/01/2020 Adam
+17/01/2020 Adam, Eric
+18/01/2020 Adam
+19/01/2020 Adam
+20/01/2020 Adam, Eric
+21/01/2020 Adam
+22/01/2020 Adam
+23/01/2020 Adam
+24/01/2020 Adam, Eric
+25/01/2020 Adam
+26/01/2020 Adam
+27/01/2020 Adam, Eric
+28/01/2020 Adam
+29/01/2020 Adam
+30/01/2020 Adam
+31/01/2020 Adam, Eric
+01/02/2020 Adam
+02/02/2020 Adam
+03/02/2020 Adam, Eric
+04/02/2020 Adam
+05/02/2020 Adam
+06/02/2020 Adam
+07/02/2020 Adam, Eric
+08/02/2020 Adam
+09/02/2020 Adam
+10/02/2020 Adam, Eric
+11/02/2020 Adam
+12/02/2020 Adam
+13/02/2020 Adam
+14/02/2020 Adam, Eric
+15/02/2020 Adam, Chris
+16/02/2020 Adam
+17/02/2020 Adam, Eric
+18/02/2020 Adam
+19/02/2020 Adam
+20/02/2020 Adam
+21/02/2020 Adam, Eric
+22/02/2020 Adam
+23/02/2020 Adam
+24/02/2020 Adam, Eric
+25/02/2020 Adam
+26/02/2020 Adam
+27/02/2020 Adam
+28/02/2020 Adam, Eric
+29/02/2020 Adam
+01/03/2020 Adam
+02/03/2020 Adam, Eric
+03/03/2020 Adam
+04/03/2020 Adam
+05/03/2020 Adam
+06/03/2020 Adam, Eric
+07/03/2020 Adam
+08/03/2020 Adam
+09/03/2020 Adam, Eric
+10/03/2020 Adam
+11/03/2020 Adam
+12/03/2020 Adam
+13/03/2020 Adam, Eric
+14/03/2020 Adam
+15/03/2020 Adam, Chris
+16/03/2020 Adam, Eric
+17/03/2020 Adam
+18/03/2020 Adam
+19/03/2020 Adam
+20/03/2020 Adam, Eric
+21/03/2020 Adam
+22/03/2020 Adam
+23/03/2020 Adam, Eric
+24/03/2020 Adam
+25/03/2020 Adam
+26/03/2020 Adam
+27/03/2020 Adam, Eric
+28/03/2020 Adam
+29/03/2020 Adam
+30/03/2020 Adam, Eric
+31/03/2020 Adam
+
+*** MARKETING REPORT FINISHED ***
