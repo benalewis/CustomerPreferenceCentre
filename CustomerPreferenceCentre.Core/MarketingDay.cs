@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CustomerPreferenceCentre.Core
 {
@@ -8,7 +9,7 @@ namespace CustomerPreferenceCentre.Core
     /// </summary>
     public class MarketingDay
     {
-        public List<Customer> Customers { get; private set; }
+        public List<Customer> Customers { get;  }
 
         public DateTime Date { get; }
 
@@ -21,6 +22,11 @@ namespace CustomerPreferenceCentre.Core
         public void AddCustomer(Customer customer)
         {
             Customers.Add(customer);
+        }
+
+        public string Print()
+        {
+            return $"{Date.ToShortDateString()} {string.Join(", ", Customers.Select(x => x.Name))}";
         }
     }
 }

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerPreferenceCentre.Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerPreferenceCentre.Tests", "CustomerPreferenceCentre.Tests\CustomerPreferenceCentre.Tests.csproj", "{24FEA51C-529D-472F-B4E2-7214F0A4F44B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerPreferenceCentre.Console", "CustomerPreferenceCentre.Console\CustomerPreferenceCentre.Console.csproj", "{9505A67D-6584-4882-9AAE-C269CD28AB60}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{24FEA51C-529D-472F-B4E2-7214F0A4F44B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24FEA51C-529D-472F-B4E2-7214F0A4F44B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24FEA51C-529D-472F-B4E2-7214F0A4F44B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9505A67D-6584-4882-9AAE-C269CD28AB60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9505A67D-6584-4882-9AAE-C269CD28AB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9505A67D-6584-4882-9AAE-C269CD28AB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9505A67D-6584-4882-9AAE-C269CD28AB60}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

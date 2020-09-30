@@ -4,7 +4,7 @@ namespace CustomerPreferenceCentre.Core.Models
 {
     public class DayOfTheMonthMarketingPreference : MarketingPreference
     {   
-        public int DateOfTheMonth { get; private set; }
+        public int DateOfTheMonth { get; }
 
         protected override MarketingChoice MarketingChoice => MarketingChoice.DayOfTheMonth;
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using CustomerPreferenceCentre.Core;
 using CustomerPreferenceCentre.Core.Models;
 using NUnit.Framework;
@@ -11,40 +10,58 @@ namespace CustomerPreferenceCentre.Tests
     [TestFixture]
     public class MarketingReportTests
     {
-        [Test]
-        public void CanProduceMarketingReport()
-        {
-            // Arrange
-            var startDate = new DateTime(2020, 01, 01);
+        private MarketingReportCreator _reportCreator;
 
-            var adam = new Customer("Adam", new EveryDayMarketingPreference());
-            var ben = new Customer("Ben", new NeverMarketingPreference());
-            var chris = new Customer("Chris", new DayOfTheMonthMarketingPreference(15));
-            var eric = new Customer("Eric", new DayOfTheWeekMarketingPreference(new List<DayOfWeek>
-            {
-                DayOfWeek.Monday,
-                DayOfWeek.Friday
-            }));
+        private readonly Customer _adam = new Customer("Adam", new EveryDayMarketingPreference());
+        private readonly Customer _ben = new Customer("Ben", new NeverMarketingPreference());
+        private readonly Customer _chris = new Customer("Chris", new DayOfTheMonthMarketingPreference(15));
+        private readonly Customer _eric = new Customer("Eric", new DayOfTheWeekMarketingPreference(new List<DayOfWeek>
+        {
+            DayOfWeek.Monday,
+            DayOfWeek.Friday
+        }));
+
+        [SetUp]
+        public void SetUp()
+        {
+            var startDate = new DateTime(2020, 01, 01);
 
             var customers = new List<Customer>
             {
-                adam, ben, chris, eric
+                _adam, _ben, _chris, _eric
             };
 
+            _reportCreator = new MarketingReportCreator(startDate, customers);
+        }
+
+        [Test]
+        public void CanProduceMarketingReport()
+        {
             // Act
-            var reportCreator = new MarketingReportCreator(startDate, customers);
+            var report = _reportCreator.GenerateReport();
 
             // Assert
-            var report = reportCreator.GenerateReport();
+            Assert.True(report.MarketingDays.All(x => x.Customers.Contains(_adam)));
+            Assert.True(report.MarketingDays.All(x => !x.Customers.Contains(_ben)));
 
-            Assert.True(report.MarketingDays.All(x => x.Customers.Contains(adam)));
-            Assert.True(report.MarketingDays.All(x => !x.Customers.Contains(ben)));
+            Assert.True(report.MarketingDays.Where(x => x.Date.Day == 15).All(x => x.Customers.Contains(_chris)));
+            Assert.True(report.MarketingDays.Where(x => x.Date.Day != 15).All(x => !x.Customers.Contains(_chris)));
 
-            Assert.True(report.MarketingDays.Where(x => x.Date.Day == 15).All(x => x.Customers.Contains(chris)));
-            Assert.True(report.MarketingDays.Where(x => x.Date.Day != 15).All(x => !x.Customers.Contains(chris)));
+            Assert.True(report.MarketingDays.Where(x => x.Date.DayOfWeek == DayOfWeek.Monday || x.Date.DayOfWeek == DayOfWeek.Friday).All(x => x.Customers.Contains(_eric)));
+            Assert.True(report.MarketingDays.Where(x => x.Date.DayOfWeek != DayOfWeek.Monday && x.Date.DayOfWeek != DayOfWeek.Friday).All(x => !x.Customers.Contains(_eric)));
+        }
 
-            Assert.True(report.MarketingDays.Where(x => x.Date.DayOfWeek == DayOfWeek.Monday || x.Date.DayOfWeek == DayOfWeek.Friday).All(x => x.Customers.Contains(eric)));
-            Assert.True(report.MarketingDays.Where(x => x.Date.DayOfWeek != DayOfWeek.Monday && x.Date.DayOfWeek != DayOfWeek.Friday).All(x => !x.Customers.Contains(eric)));
+        [Test]
+        public void CanPrint()
+        {
+            // Arrange
+            var report = _reportCreator.GenerateReport();
+
+            // Act
+            var stringResult = report.Print();
+
+            // Assert
+            Assert.NotNull(stringResult);
         }
     }
 }

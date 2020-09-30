@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace CustomerPreferenceCentre.Core
+﻿namespace CustomerPreferenceCentre.Core
 {
     public enum MarketingChoice
     {

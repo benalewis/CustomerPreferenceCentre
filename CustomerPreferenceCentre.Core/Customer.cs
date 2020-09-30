@@ -4,9 +4,9 @@ namespace CustomerPreferenceCentre.Core
 {
     public class Customer
     {
-        public string Name { get; private set; }
+        public string Name { get; }
 
-        public MarketingPreference MarketingChoice { get; private set; }
+        public MarketingPreference MarketingChoice { get; }
 
         public Customer(string name, MarketingPreference preference)
         {
