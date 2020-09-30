@@ -5,7 +5,16 @@ namespace CustomerPreferenceCentre.Core
 {
     public class MarketingReport
     {
-        public DateTime StartDate { get; set; }
-        public List<MarketingDay> MarketingDays { get; set; }
+        public List<MarketingDay> MarketingDays { get; }
+
+        public MarketingReport(List<MarketingDay> marketingDays)
+        {
+            MarketingDays = marketingDays;
+        }
+
+        public string Print()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
