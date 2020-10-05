@@ -1,13 +1,11 @@
 # Customer Preference Centre
-This document will examine the system created for a technical task to create a 
-marketing report generator which takes into account customers preferences for
+This document will examine the system to create a marketing report generator which takes into account customers preferences for
 receiving marketing information.
 
 ## Background
 This system is just the domain code with a couple of tests which can be run and debugged,
 I wasn't sure what kind of system was needeed for the spec so I've left it relatively
-open ended (GUI, console, WebUI, API ect) so hopefully that suffices; I would happily
-build one if required (please let me know).
+open ended and didn't build one and left it open for implementation (GUI, console, WebUI, API ect).
 
 Otherwise just the domain logic will suffice. I have created an ExampleOutput.txt to
 present what the main test of this system produces.
