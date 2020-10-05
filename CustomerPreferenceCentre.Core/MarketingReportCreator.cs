@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CustomerPreferenceCentre.Core
 {
@@ -17,34 +18,12 @@ namespace CustomerPreferenceCentre.Core
 
         public MarketingReport GenerateReport(int days = 90)
         {
-            var totalMarketingDays = new List<MarketingDay>();
-
-            foreach (var day in EachDay(StartDate, StartDate.AddDays(days)))
-            {
-                var marketingDay = new MarketingDay(day);
-
-                foreach (var customer in Customers)
-                {
-                    if (customer.MarketingChoice.SendMarketing(day))
-                    {
-                        marketingDay.AddCustomer(customer);
-                    }
-                }
-
-                totalMarketingDays.Add(marketingDay);
-            }
+            var totalMarketingDays = Enumerable.Range(0, days)
+                .Select(x => StartDate.AddDays(x))
+                .Select(day => new MarketingDay(day, Customers.Where(customer => customer.MarketingChoice.SendMarketing(day))))
+                .ToList();
 
             return new MarketingReport(totalMarketingDays);
-        }
-
-        /// <summary>
-        /// Returns a date range between two dates.
-        /// </summary>
-        /// <remarks>Lifted from: https://stackoverflow.com/a/1847601 </remarks>
-        private static IEnumerable<DateTime> EachDay(DateTime from, DateTime thru)
-        {
-            for (var day = from.Date; day.Date <= thru.Date; day = day.AddDays(1))
-                yield return day;
         }
     }
 }

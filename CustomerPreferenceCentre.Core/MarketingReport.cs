@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -34,7 +33,7 @@ namespace CustomerPreferenceCentre.Core
             }
 
             sb.AppendLine();
-            sb.AppendLine("*** MARKETING REPORT FINISHED ***");
+            sb.Append("*** MARKETING REPORT FINISHED ***");
 
             return sb.ToString();
         }

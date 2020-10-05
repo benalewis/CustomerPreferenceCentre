@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CustomerPreferenceCentre.Core.Enums;
 
 namespace CustomerPreferenceCentre.Core.Models
 {
@@ -21,12 +22,7 @@ namespace CustomerPreferenceCentre.Core.Models
 
         public override bool SendMarketing(DateTime date)
         {
-            if (EnableEnabledDayOfWeeks == null)
-            {
-                return false;
-            }
-
-            return EnableEnabledDayOfWeeks.Contains(date.DayOfWeek);
+            return EnableEnabledDayOfWeeks != null && EnableEnabledDayOfWeeks.Contains(date.DayOfWeek);
         }
     }
 }

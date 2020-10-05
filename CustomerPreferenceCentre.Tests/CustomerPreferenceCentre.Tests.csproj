@@ -16,4 +16,13 @@
     <ProjectReference Include="..\CustomerPreferenceCentre.Core\CustomerPreferenceCentre.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Files\CanPrintResult.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Files\CanPrintWithSetNumberOfDaysResult.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

@@ -39,3 +39,10 @@ overkill as the implementations are all tested here.
 
 ## Conclusion
 A pretty fun task really, got to use polymorphism.
+
+## Update (2020/10/05)
+To 'LINQ-ify' the project I initially wrote more tests for each of the methods that I thought needed tests, which essentially was every single method on the `Core` classes that wasn't a setter/getter or constructor. I included some example outputs and linked them to the tests as well; really making sure we're pixel perfect on the report generation.
+
+After this I decided to re-factor each class to remove some `foreach` loops and produce some neat LINQ code which passes the tests although I didn't change `MarketingReport.Print` as it reads quite nicely.
+
+It's also nice to remove that pinched StackOverflow method and write our own.

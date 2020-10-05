@@ -1,4 +1,4 @@
-﻿namespace CustomerPreferenceCentre.Core
+﻿namespace CustomerPreferenceCentre.Core.Enums
 {
     public enum MarketingChoice
     {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using CustomerPreferenceCentre.Core;
 using CustomerPreferenceCentre.Core.Models;
@@ -52,6 +53,19 @@ namespace CustomerPreferenceCentre.Tests
         }
 
         [Test]
+        public void CanPrintWithSetNumberOfDays()
+        {
+            // Arrange
+            var report = _reportCreator.GenerateReport(5);
+
+            // Act
+            var stringResult = report.Print();
+
+            // Assert
+            Assert.AreEqual(File.ReadAllText(TestContext.CurrentContext.TestDirectory + "\\Files\\CanPrintWithSetNumberOfDaysResult.txt"), stringResult);
+        }
+
+        [Test]
         public void CanPrint()
         {
             // Arrange
@@ -61,7 +75,7 @@ namespace CustomerPreferenceCentre.Tests
             var stringResult = report.Print();
 
             // Assert
-            Assert.NotNull(stringResult);
+            Assert.AreEqual(File.ReadAllText(TestContext.CurrentContext.TestDirectory + "\\Files\\CanPrintResult.txt"), stringResult);
         }
     }
 }

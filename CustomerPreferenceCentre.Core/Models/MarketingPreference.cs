@@ -1,4 +1,5 @@
 ﻿using System;
+using CustomerPreferenceCentre.Core.Enums;
 
 namespace CustomerPreferenceCentre.Core.Models
 {
